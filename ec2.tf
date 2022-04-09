@@ -8,7 +8,7 @@ data "tls_public_key" "ssh-key" {
 # Security group to allow all traffic
 resource "aws_security_group" "rancher_server" {
   name        = "${var.environment.resource_name_prefix}-rancher-server"
-  description = "Rancher quickstart - allow all traffic"
+  description = "Rancher Server"
   vpc_id      = var.vpc_id
   ingress {
     from_port   = "0"

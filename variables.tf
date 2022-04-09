@@ -1,3 +1,10 @@
+variable "aws_region" {
+  type = string
+  validation {
+    condition     = length(var.aws_region) > 0
+    error_message = "Error : the variable 'aws_region' must be non-empty."
+  }
+}
 variable "environment" {
   description = "Environment information e.g. account IDs, public/private subnet cidrs"
   type = object({
